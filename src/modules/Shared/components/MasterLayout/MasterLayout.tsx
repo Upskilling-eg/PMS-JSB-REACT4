@@ -16,9 +16,7 @@ export default function MasterLayout() {
         </div>
 
         <div className="w-100">
-          <div>
-            <Outlet />
-          </div>
+          <Outlet />
         </div>
       </div>
     </>

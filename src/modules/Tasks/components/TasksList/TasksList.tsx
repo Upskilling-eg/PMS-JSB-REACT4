@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { requestHeader, TASKSURLS } from "../../../../constants/URLS";
 import { AuthContext } from "../../../../context/authcontext";
+import UsersTasks from "./UsersTasks";
 
 export default function TasksList() {
   const { loginData } = useContext(AuthContext);
@@ -74,7 +75,7 @@ export default function TasksList() {
           </div>
         </div>
       ) : (
-        <div>eltasks list lw anaaaaaa employeeee</div>
+        <UsersTasks />
       )}
     </>
   );
