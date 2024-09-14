@@ -27,7 +27,6 @@ export const useChangeStatus = () => {
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
     },
     onMutate: async (todo) => {
-      await queryClient.cancelQueries({ queryKey: ["todos"] });
       const prevTodos: TasksType = queryClient.getQueryData(["tasks"]) || [];
 
       const newTodos = prevTodos?.map((task: TaskType) => {
@@ -38,7 +37,7 @@ export const useChangeStatus = () => {
         return task;
       });
       // Optimistically update to the new value
-      queryClient.setQueryData(["todos"], newTodos);
+      queryClient.setQueryData(["tasks"], newTodos);
     },
 
     onSettled: () => {
