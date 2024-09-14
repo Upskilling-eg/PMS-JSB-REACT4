@@ -28,4 +28,5 @@ export const USERSSURLS = {
   getUsersUrl: `${BASEURL}/Users/Manager`,
   toggleStatusUrl: (id: string) => `${BASEURL}/Users/${id}`,
   getAllMyAssignedTasks: `${BASEURL}/Task`,
+  changeStatus: (id: string) => `${BASEURL}/Task/${id}/change-status`,
 };
